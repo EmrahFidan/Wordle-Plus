@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page Info -->
+    <title>WORDLE</title>
+    <link rel="icon" href="/img/wordle.png" type="image/x-icon" />
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== Main Contain Start ===== -->
+
+    <div class="main-container">
+      <!-- ===== NavBar Start ===== -->
+      <div class="aside">
+        <div class="logo">
+          <a
+            href="index.html"
+            onclick="return confirm('Are you sure you want to refresh the page ?')"
+            ><span>Wordle</span></a
+          >
+        </div>
+        <div class="nav-toggler">
+          <span></span>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="#level1" class="active">Level-1 (5x6)</a>
+          </li>
+          <li>
+            <a href="#level2">Level-2 (4x7)</a>
+          </li>
+          <li>
+            <a href="#level3">Level-3 (6x6)</a>
+          </li>
+          <li>
+            <a href="#level4">Level-4 (7x5)</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ===== NavBar End ===== -->
+      <!-- Main Content Start -->
+      <div class="main-content">
+        <!-- === Section 1 Start === -->
+        <section class="level-1 active section" id="level1">
+          <!-- BOARD START -->
+          <div class="board">
+            <div class="row-3">
+              <input
+                type="text"
+                placeholder="Enter Guess Game"
+                name="text"
+                class="guess-text"
+                maxlength="5"
+              />
+
+              <button class="check-button">CHECK</button>
+            </div>
+            <!-- COLUMN 1 START -->
+            <div class="row-2">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <!-- COLUMN 1 FINISH -->
+            <!-- COLUMN 2 START -->
+            <div class="row-2">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <!-- COLUMN 2 FINISH -->
+            <!-- COLUMN 3 START -->
+            <div class="row-2">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <!-- COLUMN 3 FINISH -->
+            <!-- COLUMN 4 START -->
+            <div class="row-2">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <!-- COLUMN 4 FINISH -->
+            <!-- COLUMN 5 START -->
+            <div class="row-2">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <!-- COLUMN 5 FINISH -->
+            <!-- COLUMN 6 START -->
+            <div class="row-2">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <!-- COLUMN 6 FINISH -->
+          </div>
+          <!-- BOARD FINISH -->
+
+          <hr class="special-line" />
+
+          <!-- KEYBOARD START -->
+          <div class="keyboard">
+            <!-- ROW 1 START -->
+            <div class="row">
+              <button class="key">A</button>
+              <button class="key">B</button>
+              <button class="key">C</button>
+              <button class="key">D</button>
+              <button class="key">E</button>
+              <button class="key">F</button>
+              <button class="key">G</button>
+              <button class="key">H</button>
+              <button class="key">I</button>
+              <button class="key">J</button>
+              <button class="key">K</button>
+              <button class="key">L</button>
+              <button class="key">M</button>
+            </div>
+            <!-- ROW 1 FINISH -->
+            <!-- ROW 2 START -->
+            <div class="row">
+              <button class="key">N</button>
+              <button class="key">O</button>
+              <button class="key">P</button>
+              <button class="key">Q</button>
+              <button class="key">R</button>
+              <button class="key">S</button>
+              <button class="key">T</button>
+              <button class="key">U</button>
+              <button class="key">V</button>
+              <button class="key">W</button>
+              <button class="key">X</button>
+              <button class="key">Y</button>
+              <button class="key">Z</button>
+            </div>
+            <!-- ROW 2 FINISH -->
+          </div>
+          <!-- KEYBOARD FINISH -->
+          <!-- Message Modal -->
+          <div id="custom-modal" class="modal">
+            <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <p id="modal-message"></p>
+            </div>
+          </div>
+        </section>
+        <!-- === Section 1 End === -->
+
+        <!-- === About Section Start === -->
+        <section class="level-2 section" id="level2">
+          <!-- BOARD START -->
+          <div class="board-2">
+            <div class="row-3-2">
+              <input
+                type="text"
+                placeholder="Enter Guess Game"
+                name="text"
+                class="guess-text-2"
+                maxlength="4"
+              />
+
+              <button class="check-button-2">CHECK</button>
+            </div>
+            <!-- COLUMN 1 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 1 FINISH -->
+            <!-- COLUMN 2 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 2 FINISH -->
+            <!-- COLUMN 3 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 3 FINISH -->
+            <!-- COLUMN 4 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 4 FINISH -->
+            <!-- COLUMN 5 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 5 FINISH -->
+            <!-- COLUMN 6 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 6 FINISH -->
+            <!-- COLUMN 2 START -->
+            <div class="row-2-2">
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+              <div class="box-2"></div>
+            </div>
+            <!-- COLUMN 2 FINISH -->
+          </div>
+          <!-- BOARD FINISH -->
+
+          <hr style="margin-top: -20px" class="special-line-2" />
+
+          <!-- KEYBOARD START -->
+          <div class="keyboard-2">
+            <!-- ROW 1 START -->
+            <div class="row2">
+              <button class="key-2">A</button>
+              <button class="key-2">B</button>
+              <button class="key-2">C</button>
+              <button class="key-2">D</button>
+              <button class="key-2">E</button>
+              <button class="key-2">F</button>
+              <button class="key-2">G</button>
+              <button class="key-2">H</button>
+              <button class="key-2">I</button>
+              <button class="key-2">J</button>
+              <button class="key-2">K</button>
+              <button class="key-2">L</button>
+              <button class="key-2">M</button>
+            </div>
+            <!-- ROW 1 FINISH -->
+            <!-- ROW 2 START -->
+            <div class="row2">
+              <button class="key-2">N</button>
+              <button class="key-2">O</button>
+              <button class="key-2">P</button>
+              <button class="key-2">Q</button>
+              <button class="key-2">R</button>
+              <button class="key-2">S</button>
+              <button class="key-2">T</button>
+              <button class="key-2">U</button>
+              <button class="key-2">V</button>
+              <button class="key-2">W</button>
+              <button class="key-2">X</button>
+              <button class="key-2">Y</button>
+              <button class="key-2">Z</button>
+            </div>
+            <!-- ROW 2 FINISH -->
+          </div>
+          <!-- KEYBOARD FINISH -->
+          <!-- Message Modal -->
+          <div id="custom-modal-2" class="modal-2">
+            <div class="modal-content-2">
+              <span class="close-button-2">&times;</span>
+              <p id="modal-message-2"></p>
+            </div>
+          </div>
+        </section>
+        </section>
+        <!-- === About Section End === -->
+
+        <!-- === Services Section Start === -->
+        <section class="level-3 section" id="level3">
+          <!-- BOARD START -->
+          <div class="board-3">
+            <div class="row-3-3">
+              <input
+                type="text"
+                placeholder="Enter Guess Game"
+                name="text"
+                class="guess-text-3"
+                maxlength="6"
+              />
+
+              <button class="check-button-3">CHECK</button>
+            </div>
+            <!-- COLUMN 1 START -->
+            <div class="row-2-3">
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+            </div>
+            <!-- COLUMN 1 FINISH -->
+            <!-- COLUMN 2 START -->
+            <div class="row-2-3">
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+            </div>
+            <!-- COLUMN 2 FINISH -->
+            <!-- COLUMN 3 START -->
+            <div class="row-2-3">
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+            </div>
+            <!-- COLUMN 3 FINISH -->
+            <!-- COLUMN 4 START -->
+            <div class="row-2-3">
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+            </div>
+            <!-- COLUMN 4 FINISH -->
+            <!-- COLUMN 5 START -->
+            <div class="row-2-3">
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+            </div>
+            <!-- COLUMN 5 FINISH -->
+            <!-- COLUMN 6 START -->
+            <div class="row-2-3">
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+              <div class="box-3"></div>
+            </div>
+            <!-- COLUMN 6 FINISH -->
+          </div>
+          <!-- BOARD FINISH -->
+
+          <hr class="special-line-3" />
+
+          <!-- KEYBOARD START -->
+          <div class="keyboard-3">
+            <!-- ROW 1 START -->
+            <div class="row3">
+              <button class="key-3">A</button>
+              <button class="key-3">B</button>
+              <button class="key-3">C</button>
+              <button class="key-3">D</button>
+              <button class="key-3">E</button>
+              <button class="key-3">F</button>
+              <button class="key-3">G</button>
+              <button class="key-3">H</button>
+              <button class="key-3">I</button>
+              <button class="key-3">J</button>
+              <button class="key-3">K</button>
+              <button class="key-3">L</button>
+              <button class="key-3">M</button>
+            </div>
+            <!-- ROW 1 FINISH -->
+            <!-- ROW 2 START -->
+            <div class="row3">
+              <button class="key-3">N</button>
+              <button class="key-3">O</button>
+              <button class="key-3">P</button>
+              <button class="key-3">Q</button>
+              <button class="key-3">R</button>
+              <button class="key-3">S</button>
+              <button class="key-3">T</button>
+              <button class="key-3">U</button>
+              <button class="key-3">V</button>
+              <button class="key-3">W</button>
+              <button class="key-3">X</button>
+              <button class="key-3">Y</button>
+              <button class="key-3">Z</button>
+            </div>
+            <!-- ROW 2 FINISH -->
+          </div>
+          <!-- KEYBOARD FINISH -->
+          <!-- Message Modal -->
+          <div id="custom-modal-3" class="modal-3">
+            <div class="modal-content-3">
+              <span class="close-button-3">&times;</span>
+              <p id="modal-message-3"></p>
+            </div>
+          </div>
+        </section>
+        </section>
+        <!-- === Services Section End === -->
+
+        <!-- === Portfolio Section Start === -->
+        <section class="level-4 section" id="level4">
+          <!-- BOARD START -->
+          <div class="board-4">
+            <div class="row-3-4">
+              <input
+                type="text"
+                placeholder="Enter Guess Game"
+                name="text"
+                class="guess-text-4"
+                maxlength="7"
+              />
+
+              <button class="check-button-4">CHECK</button>
+            </div>
+            <!-- COLUMN 1 START -->
+            <div class="row-2-4">
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+            </div>
+            <!-- COLUMN 1 FINISH -->
+            <!-- COLUMN 2 START -->
+            <div class="row-2-4">
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+            </div>
+            <!-- COLUMN 2 FINISH -->
+            <!-- COLUMN 3 START -->
+            <div class="row-2-4">
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+            </div>
+            <!-- COLUMN 3 FINISH -->
+            <!-- COLUMN 4 START -->
+            <div class="row-2-4">
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+            </div>
+            <!-- COLUMN 4 FINISH -->
+            <!-- COLUMN 5 START -->
+            <div class="row-2-4">
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+              <div class="box-4"></div>
+            </div>
+            <!-- COLUMN 5 FINISH -->
+          </div>
+          <!-- BOARD FINISH -->
+
+          <hr class="special-line-4" />
+
+          <!-- KEYBOARD START -->
+          <div class="keyboard-4">
+            <!-- ROW 1 START -->
+            <div class="row4">
+              <button class="key-4">A</button>
+              <button class="key-4">B</button>
+              <button class="key-4">C</button>
+              <button class="key-4">D</button>
+              <button class="key-4">E</button>
+              <button class="key-4">F</button>
+              <button class="key-4">G</button>
+              <button class="key-4">H</button>
+              <button class="key-4">I</button>
+              <button class="key-4">J</button>
+              <button class="key-4">K</button>
+              <button class="key-4">L</button>
+              <button class="key-4">M</button>
+            </div>
+            <!-- ROW 1 FINISH -->
+            <!-- ROW 2 START -->
+            <div class="row4">
+              <button class="key-4">N</button>
+              <button class="key-4">O</button>
+              <button class="key-4">P</button>
+              <button class="key-4">Q</button>
+              <button class="key-4">R</button>
+              <button class="key-4">S</button>
+              <button class="key-4">T</button>
+              <button class="key-4">U</button>
+              <button class="key-4">V</button>
+              <button class="key-4">W</button>
+              <button class="key-4">X</button>
+              <button class="key-4">Y</button>
+              <button class="key-4">Z</button>
+            </div>
+            <!-- ROW 2 FINISH -->
+          </div>
+          <!-- KEYBOARD FINISH -->
+          <!-- Message Modal -->
+          <div id="custom-modal-4" class="modal-4">
+            <div class="modal-content-4">
+              <span class="close-button-4">&times;</span>
+              <p id="modal-message-4"></p>
+            </div>
+          </div>
+        </section>
+        </section>
+        <!-- === Portfolio Section End === -->
+      </div>
+      <!-- Main Content Finish -->
+    </div>
+
+    <!-- Main Content End -->
+
+    <!-- JS files -->
+    <script src="script.js"></script>
+  </body>
+</html>
